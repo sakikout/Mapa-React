@@ -9,7 +9,7 @@ Essa é uma aplicação frontend web com mapa interativo, desenvolvida como part
 ---
 ## Inicialização
 ### Frontend
-Para iniciar o frontend, caminhar até o diretório calculadora-backend no terminal pelo comando `cd react-map`, baixar as dependências com `npm install` e rodar localmente pelo comando `npm run dev`.
+Para iniciar o frontend, caminhar até o diretório calculadora-backend no terminal pelo comando `cd react-map`, baixar as dependências com `npm install` e rodar localmente pelo comando `npm run dev`. Além disso, é preciso configurar a chave da API do OpenRouteService, que se encontra na pasta `src/services` no arquivo `openRouteService.ts`. Altere o valor de `const API_KEY` para a string da sua chave.
 
 ---
 ## Considerações Finais
