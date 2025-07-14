@@ -5,6 +5,7 @@ Essa é uma aplicação frontend web com mapa interativo, desenvolvida como part
 **Objetivo**: Implementar um mapa com busca de localizações e exibição de rotas, utilizando ferramentas comuns ao stack do laboratório.
 
 **Tecnologias**: React, Styled-Components, OpenLayers e OpenRouteService (ORS)
+
 ---
 ## Inicialização
 ### Frontend
