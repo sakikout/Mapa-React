@@ -1,13 +1,14 @@
 import { useEffect } from 'react';
 import { LineString } from 'ol/geom';
+import { Map } from 'ol';
 import VectorLayer from 'ol/layer/Vector';
 import VectorSource from 'ol/source/Vector';
-import { Feature } from 'ol';
+import Feature from 'ol/Feature';
 import type { Coordinate } from '../types.ts';
 import { Style, Stroke } from 'ol/style';
 
 export const useRouteLayer = (
-  map: any,
+  map: Map | null,
   coordinates: Coordinate[] | null,
   travelMode: string
 ) => {
