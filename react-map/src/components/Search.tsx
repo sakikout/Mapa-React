@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import * as S from './styles';
 import { searchLocations, getRoute } from '../services/openRouteService';
-import type { Location, Coordinate, TravelMode } from '../types';
+import type { Location, Coordinate, TravelMode, Route } from '../types';
 
 interface SearchProps {
-  onRouteChange: (route: any) => void;
+  onRouteChange: (route: Route) => void;
   onPointsChange: (start: Coordinate | null, end: Coordinate | null) => void;
 }
 
@@ -84,7 +84,8 @@ const SearchComponent: React.FC<SearchProps> = ({ onRouteChange, onPointsChange 
         <S.Input
           type="text"
           value={selectedStart?.name || startQuery}
-          onChange={(e) => setStartQuery(e.target.value)}
+          onFocus={() => setSelectedStart(null)}
+          onChange={(e) => { setStartQuery(e.target.value); setSelectedStart(null); }}
           placeholder="Digite o local de partida"
         />
         {startSuggestions.length > 0 && (
@@ -110,7 +111,8 @@ const SearchComponent: React.FC<SearchProps> = ({ onRouteChange, onPointsChange 
         <S.Input
           type="text"
           value={selectedEnd?.name || endQuery}
-          onChange={(e) => setEndQuery(e.target.value)}
+          onFocus={() => setSelectedEnd(null)}
+          onChange={(e) => { setEndQuery(e.target.value); setSelectedEnd(null); }}
           placeholder="Digite o local de destino"
         />
         {endSuggestions.length > 0 && (
